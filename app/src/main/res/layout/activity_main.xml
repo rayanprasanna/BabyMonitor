@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:id="@+id/main"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/predict"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <VideoView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/videoView"/>
+    </LinearLayout>
+    <!--<TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="417dp"
+        tools:ignore="HardcodedText,MissingConstraints" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/predict"
+        android:layout_above="@id/bottom_navigation"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/angry"
+            android:visibility="invisible"
+            android:textColor="#000"
+            android:text="Angry = 90%"
+            tools:ignore="HardcodedText,UnusedAttribute" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/happy"
+            android:visibility="invisible"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="#000"
+            android:text="Happy = 90%"
+            tools:ignore="HardcodedText,UnusedAttribute" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/sad"
+            android:visibility="invisible"
+            android:textColor="#000"
+            android:text="Sad = 90%"
+            tools:ignore="HardcodedText,UnusedAttribute" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/surprise"
+            android:visibility="invisible"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="#000"
+            android:text="Surprise = 90%"
+            tools:ignore="HardcodedText,UnusedAttribute" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:visibility="invisible"
+            android:id="@+id/contempt"
+            android:textColor="#000"
+            android:text="Contempt = 90%"
+            tools:ignore="HardcodedText,UnusedAttribute" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/disgust"
+            android:visibility="invisible"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="#000"
+            android:text="Disgust = 90%"
+            tools:ignore="HardcodedText,UnusedAttribute" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:visibility="invisible"
+            android:id="@+id/fear"
+            android:textColor="#000"
+            android:text="Fear = 90%"
+            tools:ignore="HardcodedText,UnusedAttribute" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/neutral"
+            android:visibility="invisible"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="#000"
+            android:text="Neutral = 90%"
+            tools:ignore="HardcodedText,UnusedAttribute" />
+    </LinearLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="#ffffff"
+        app:itemTextColor="#ffffff">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:id="@+id/feed"
+                android:layout_marginLeft="50dp"
+                android:orientation="horizontal"
+                tools:ignore="RtlHardcoded,UseCompoundDrawables,UselessParent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:layout_gravity="center_vertical"
+                    android:text="Live Video Feed"
+                    tools:ignore="HardcodedText" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_play_w"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/prediction"
+                android:layout_gravity="end"
+                android:layout_marginRight="50dp"
+                tools:ignore="RtlHardcoded,UseCompoundDrawables,UselessParent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:layout_gravity="center_vertical"
+                    android:text="Prediction"
+                    tools:ignore="HardcodedText" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_prediction_w"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+        </FrameLayout>
+    </android.support.design.widget.BottomNavigationView>
+</RelativeLayout>
